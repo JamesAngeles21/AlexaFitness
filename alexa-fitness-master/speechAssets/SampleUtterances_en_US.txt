@@ -1,0 +1,11 @@
+StartWorkout start workout
+StartWorkout start my workout
+StartWorkout begin workout
+StartWorkout begin my workout
+FinishExercise finish exercise
+FinishExercise finished my exercise
+FinishExercise I'm done with my exercise
+FinishExercise stop exercise
+FinishExercise stop my exercise 
+FinishExercise next exercise
+FinishExercise start next exercise

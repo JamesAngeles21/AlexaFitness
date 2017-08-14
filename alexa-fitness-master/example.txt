@@ -1,0 +1,143 @@
+//PROGRAM
+    var template = {
+        "Category": "alexa-fit",
+        "Type": type,
+        "Name": "program",
+        "Profiles": [
+            {
+                "Type": 1,
+                "Name": "general",
+                "Fields": [
+                    {
+                        "Name": "Number of Days",
+                        "Type": "Integer",
+                        "Index": 0,
+                        "Position": 0,
+                    }
+                ]
+            }
+        ],
+        "Drawers": [10]
+    }
+    
+//DAY
+    var template = {
+        "Category": "alexa-fit",
+        "Type": type,
+        "Name": "day",
+        "Profiles": [
+            {
+                "Type": 1,
+                "Name": "general",
+                "Fields": [
+                    {
+                        "Name": "Program Name",
+                        "Type": "String",
+                        "Index": 0,
+                        "Position": 0,
+                    },
+                    {
+                        "Name": "Day Number",
+                        "Type": "Integer",
+                        "Index": 0,
+                        "Position": 0,
+                    },
+                    {
+                        "Name": "Number of Exercises",
+                        "Type": "Integer",
+                        "Index": 1,
+                        "Position": 0,
+                    }
+                ]
+            }
+        ],
+        "Drawers": [10]
+    }
+
+    
+//TIME BASED EXERCISE    
+    var template = {
+        "Category": "alexa-fit",
+        "Type": type,
+        "Name": "exercise-time",
+        "Profiles": [
+            {
+                "Type": 1,
+                "Name": "general",
+                "Fields": [
+                    {
+                        "Name": "Program Name",
+                        "Type": "String",
+                        "Index": 0,
+                        "Position": 0,
+                    },
+                    {
+                        "Name": "Day Number",
+                        "Type": "Integer",
+                        "Index": 0,
+                        "Position": 0,
+                    },
+                    {
+                        "Name": "Time in seconds",
+                        "Type": "Integer",
+                        "Index": 1,
+                        "Position": 0,
+                    }
+                ]
+            }
+        ],
+        "Drawers": [10]
+    }
+
+
+//REP BASED EXERCISE
+    var template = {
+        "Category": "alexa-fit",
+        "Type": type,
+        "Name": "exercise-rep",
+        "Profiles": [
+            {
+                "Type": 1,
+                "Name": "general",
+                "Fields": [
+                    {
+                        "Name": "Program Name",
+                        "Type": "String",
+                        "Index": 0, //field index
+                        "Position": 0, 
+                    },
+                    {
+                        "Name": "Day Number",
+                        "Type": "Integer",
+                        "Index": 0,
+                        "Position": 0,
+                    },
+                    {
+                        "Name": "Reps",
+                        "Type": "Integer",
+                        "Index": 1,
+                        "Position": 0,
+                    },
+                    {
+                        "Name": "Sets",
+                        "Type": "Integer",
+                        "Index": 2,
+                        "Position": 0,
+                    }
+                ]
+            }
+        ],
+        "Drawers": [10]
+    }
+
+
+/content/v1/folder?
+
+page=1&
+drawerID=2& //10
+pageSize=10& //
+type=300600& //10003
+metadata[0][profileType]=1
+&metadata[0][fieldType]=string //string, integer, double, datetime
+&metadata[0][fieldIndex]=0 //
+&metadata[0][fieldValue]=Active //Nelson's Program

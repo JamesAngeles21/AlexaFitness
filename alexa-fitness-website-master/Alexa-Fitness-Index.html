@@ -1,0 +1,206 @@
+<!DOCTYPE HTML>
+<html>
+    <head>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+         <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name = "description" content = "Alexa Fitness">
+        <meta name = "viewport" content = "width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+        <title> Alexa Fitness</title>
+        <link rel ="stylesheet" href = "Alexa-Fitness.css"> 
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous"> 
+        <link rel = "stylesheet" href = "https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.css">
+        <link href="https://fonts.googleapis.com/css?family=Roboto+Slab" rel="stylesheet">
+        <link href = "CreativeButtons/css/component.css" rel = "stylesheet">
+        <link href = "CreativeButtons/css/default.css" rel = "stylesheet">
+        <link href = "Hover-master/css/hover.css" rel = "stylesheet">
+        <link href = "TextInputEffects/css/normalize.css" rel = "stylesheet">
+        <link href = "TextInputEffects/css/set1.css">
+        
+
+        
+    </head>
+    
+    <body>
+        
+        <div class = "intro">
+            <div class = "wrap-fitness-intro">
+                <div class = "fitness-intro">
+                    <h1 class = "title-name font-choice"> Alexa Fitness</h1>
+                    <h1 class = "motto-name font-choice">Get Fit the Right Way. </h2>
+                </div>
+            </div>
+            
+            
+            <div class = "wrap-start-button">
+                        <a href = "#choose-page" id = "scroll"><button type = "button" id = "down-button">
+                            <span  id = "top" class = "glyphicon glyphicon-menu-down" aria-hidden = "true"></span>
+
+                        <!--<span id = "bottom" class = "glyphicon glyphicon-menu-down" aria-hidden = "true"></span>-->
+                            </button>
+                    </a>
+                    
+            </div>
+            
+        </div>
+        
+        <div id = "choose-page">
+            <h1 class = "choices"> Create Your Program </h1>
+
+            
+                <div class = "wrap-program-name">
+                    <span class = "input input--jiro">
+                        <input class = "input__field input__field--jiro font-change" type = "text" id = "input-11">
+                        <label id = "color"class = "input__label input__label--jiro" for = "input-11 font-change">
+                            <span class = "input__label-content input__label-content--jiro font-change"> Create Program Name <span></span>*Required</span>
+                        </label> 
+
+                    </span>
+            </div>
+                    
+                
+            
+                <div class = "wrap-start">
+                    <a href = "#third-page">
+                        <button onclick = "storeTitle();" id = "own"class= "program-choice btnA btn-1 btn-1d">Start</button>
+                    </a>
+                </div>
+					
+				           
+            
+            
+            
+
+        </div>
+        
+        <div id = "third-page">
+            <div class = "col-md-12">
+                <h1 class = "first-choice font-choice"> Select Length of Program</h1>
+            </div>
+            <div id = "num-days" class ="col-md-12">
+                <div class = "col-md-4 col-xs-12">
+                    <div class = "content-wrap">
+                        <a class = "num-link" href = "#third-page">
+                            <button onclick = "showDiv(); changeMaxNumOfDays(1); updatePage(1);" id = "one" class = "day-format"><h1 class = "numbers font-choice">1</h1> <h2 class = "days font-choice"> day</h2></button>
+                        </a>
+                    </div>
+                </div>
+                <div class = "col-md-4 col-xs-12">
+                    <div class = "content-wrap">
+                        <button onclick = "showDiv(); changeMaxNumOfDays(3); updatePage(1);" id = "three" class = "day-format"> <h1 class = "numbers font-choice"> 3</h1> <h2 class = "days font-choice"> days</h2></button>
+                    </div>
+                </div>
+
+                <div class = "col-md-4 col-xs-12">
+                    <div class = "content-wrap">
+                    <button onclick = "showDiv(); changeMaxNumOfDays(5);updatePage(1);" id ="five" class = "day-format"> <h1 class = "numbers font-choice"> 5</h1> <h2 class = "days font-choice"> days</h2></button>
+                    </div>
+                </div>
+                
+            </div>
+            
+            <div id = "input-days" class = "col-md-12"> 
+                <span class = "input input--jiro">
+                    <input class = "input__field input__field--jiro font-change" type = "text" id = "input-12">
+                    <label class = "input__label input__label--jiro" for = "input-12 font-change">
+                        <span class = "input__label-content input__label-content--jiro font-change"> Custom # of Days</span>
+                    </label>
+
+                </span>
+            </div>
+                <div class = "col-md-12">
+                    <button id = "submit" class = "program-choice btnA btn-1 btn-1d"> Submit</button>
+                </div>
+            </div>
+            
+                
+                
+                
+            
+        
+        <div id = "fourth-page">
+            <div id = "day-choice">
+                <h1 id = "program-heading"> </h1>
+                <h1 id = "title-day" class = "font-choice"> </h1>
+            </div>
+            
+            <div class = "wrap-choice-buttons">
+                <div id = "row-above-top" class = "col-md-6 col-xs-12">
+                    <button onclick = "showExerciseType('# Of Reps'); hideorShowSets(1); changeToReps();" id = "add-exercise" class = "done program-choice btnA btn-1 btn-1d"> Rep Based Exercise </button>
+                </div>
+            
+                <div id = "row-above-top-right" class = "col-md-6">
+                    <button onclick = "showExerciseType('Time in seconds'); hideorShowSets(0); changeToTime();" id = "add-exercise" class = "done program-choice btnA btn-1 btn-1d"> Time Based Exercise </button>
+                </div>
+            </div>
+            
+            <div id = "top-row" class = "col-md-12">
+                <div id = "exercise-position" class = "col-md-6 col-xs-12">
+                    <span class = "input input--jiro">
+                        <input id = "exercise" class = "input__field input__field--jiro font-change" type = "text">
+                        <label class = "input__label input__label--jiro" for = "exercise font-change">
+                            <span class = "input__label-content input__label-content--jiro font-change"> Exercise</span>
+                        </label>
+
+                    </span>
+                </div>
+
+                <div id = "sets-position" class = "col-md-6 col-xs-12">
+                    <span class = "input input--jiro">
+                        <input id = "sets" class = "input__field input__field--jiro font-change" type = "text">
+                        <label class = "input__label input__label--jiro" for = "sets font-change">
+                            <span class = "input__label-content input__label-content--jiro font-change"> Sets</span>
+                        </label>
+
+                    </span>
+                </div>
+            </div>
+            
+            
+            
+            <div id = "measurement" class = "col-md-12">
+                <span class = "input input--jiro">
+                    <input id = "type-of-exercise" class = "input__field input__field--jiro font-change" type = "text">
+                    <label class = "input__label input__label--jiro" for = "type-of-exercise font-change">
+                        <span id = "typeOfActivity" class = "input__label-content input__label-content--jiro font-change"> Reps or Timed</span>
+                    </label>
+
+                </span>
+            </div>
+            
+            
+            
+            
+            <div class = "wrap-submit-buttons">
+                <div id = "add-exercise" class = "col-md-6"> 
+                    <button onclick = "storeInfo();" id = "add-exercise" class = "done program-choice btnA btn-1 btn-1d"> Add Exercise </button>
+
+                </div>
+
+
+                <div id = "finish-day" class = "col-md-6">
+                    <button onclick = "incrementDay(); clearContent(); "  class = "done program-choice btnA btn-1 btn-1d"> Finish Day </button>
+                </div>
+            </div>
+            
+            <div class = "checkContent col-md-12">
+                <h2 id = "success-or-warning" class = "font-choice"></h1>
+            </div>
+                        
+        </div>
+            
+        
+        
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+        <script src = "jquery-3.1.1.min.js"> </script>
+        <script src ="jquery.localScroll-1.4.0/jquery.localScroll.js"> </script>
+        <script src = "jquery.scrollTo-2.1.2/jquery.scrollTo.js"> </script>
+        <script src = "database/database.js"> </script>
+        <script src = "database/identity.js"> </script>
+        <script src = "CreativeButtons/js/classie.js"></script>
+        <script src = "CreativeButtons/js/modernizr.custom.js"></script>
+        <script src = "Alexa-Program-Maker.js"></script>
+        <script type = "text/javascript" src = "Alexa-Fitness.js"></script>
+    </body>
+    
+</html>

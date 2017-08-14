@@ -1,0 +1,94 @@
+<!DOCTYPE HTML>
+<html>
+    <head>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+         <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name = "description" content = "Alexa Fitness">
+        <meta name = "viewport" content = "width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+        <title> Alexa Fitness</title>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous"> 
+        <link rel = "stylesheet" href = "https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.css">            
+        <link rel = "stylesheet" href = "animate.css">
+        
+        
+    </head>
+    
+    <body>
+        
+        <progress value = "0" max = "100" id = "uploader"></progress>
+        <input type = "file" value = "upload" id = "fileButton"/> 
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        <script src="https://www.gstatic.com/firebasejs/3.6.9/firebase-app.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/3.6.9/firebase-storage.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/3.6.9/firebase.js"></script>
+        <script>
+      // Initialize Firebase
+      var config = {
+        apiKey: "AIzaSyCFVBP9Bsz7u4Pf1siAxM6TplhkBr8iBC4",
+        authDomain: "alexa-fitness.firebaseapp.com",
+        databaseURL: "https://alexa-fitness.firebaseio.com",
+        storageBucket: "alexa-fitness.appspot.com",
+        messagingSenderId: "745510313667"
+      };
+      firebase.initializeApp(config);
+        </script>
+        
+        <script> 
+        /*var storageRef = firebase.storage().ref();
+        var textRef = storageRef.child('Documents\CodingProjects\CEWIT');*/
+            
+        </script>
+        
+        <script>
+            var uploader = document.getElementById('uploader');
+            var fileButton = document.getElementById('fileButton');
+            
+            fileButton.addEventListener('change', function(e) {
+                //get file
+                var file = e.target.files[0];
+                
+                // Create storage ref
+                var storageRef = firebase.storage().ref("Documents" + "/" + file.name );
+                
+                //Upload file
+                var task = storageRef.put(file);
+                //upload progress bar
+                task.on('state_changed',
+                   function progress (snapshot) {
+                        var percentage = (snapshot.bytesTransferred/ snapshot.totalBytes) * 100;
+                        uploader.value = percentage;
+                    
+
+                    },
+                        
+                    function error (err) {
+                    
+                        
+                    
+                    },
+                        
+                    function complete() {
+                    
+                    }    
+                        
+                );
+            });
+            
+            
+        </script>
+        
+        
+    </body>
+    
+</html>
